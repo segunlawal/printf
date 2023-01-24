@@ -14,7 +14,7 @@ int main (void)
 
 	printf("__________________________________\n");
 
-	printf("STANDARD PRINTF FROM C\n");
+	printf("HOMEMADE PRINTF FROM C\n");
 	hmd_count = printf("My first initial is: %c \n", 'S');
 	printf("I printed %d characters\n", hmd_count);
 	return (0);

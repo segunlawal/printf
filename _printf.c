@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int tmp = 0;
 	int count =  0;
+	va_list args;
+	va_start(args, format);
+	int (*f)(va_list);
 
 	if (format == NULL)
 		return (-1);
@@ -28,8 +31,25 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '%')
 		{
-			printf("percent dey here\n");
-			break;
+			f = handle_specifier(&format[i + 1]);
+			if (f != NULL)
+			{
+				tmp = f(args);
+				count += tmp;
+				i += 2;
+				continue;
+			}
+			if (format[i + 1] == '\0')
+			{
+				break;
+			}
+			if (format[i + 1] != '\0')
+			{
+				tmp = write(1, (format + i), 1);
+				count += tmp;
+				i++;
+				continue;
+			}
 		}
 	}
 	return (count);

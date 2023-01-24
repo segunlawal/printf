@@ -6,7 +6,7 @@
  * Return: pointer to function
  */
 
-int (*handle_specifier(char *format))(va_list)
+int (*handle_specifier(const char *format))(va_list)
 {
 	int i = 0;
 	func_s handler[3] = {
