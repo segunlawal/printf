@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct func - Struct for specifier
@@ -18,5 +19,8 @@ typedef struct func
 
 int _printf(const char *format, ...);
 int (*handle_specifier(char*))(va_list);
+int print_char(va_list);
+int print_str(va_list);
+int print_cent(va_list);
 
 #endif
