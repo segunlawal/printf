@@ -8,7 +8,9 @@
 
 int print_cent(va_list args)
 {
-	//to write
+	(void)args;
 
-	return (0);
+	write(1, "%", 1);
+
+	return (1);
 }
