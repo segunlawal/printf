@@ -9,8 +9,8 @@ int _printf(const char *format, ...)
 	int i = 0, count = 0, tmp = 0;
 	va_list args;
 
-	va_start(args, format);
 	int (*f)(va_list);
+	va_start(args, format);
 
 	if (format == NULL)
 		return (-1);
