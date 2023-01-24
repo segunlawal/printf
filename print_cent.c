@@ -1,9 +1,10 @@
 #include "main.h"
+
 /**
- * print_cent - prints a character to stdout
- * @c: character
+ * print_cent - prints character % to stdout
+ * @args: variadic parameter
  *
- * Return: number of characters printed to stdout
+ * Return: number of characters printed
  */
 
 int print_cent(va_list args)
@@ -13,4 +14,4 @@ int print_cent(va_list args)
 	write(1, "%", 1);
 
 	return (1);
-}
+}	
