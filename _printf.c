@@ -1,25 +1,19 @@
-#include <unistd.h>
-#include <stdarg.h>
 #include "main.h"
-#include <stdio.h>
 /**
  * _printf - produces output according to a format
  * @format: character string
  * Return: number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int tmp = 0;
-	int count =  0;
+	int i = 0, count = 0, tmp = 0;
 	va_list args;
+
 	va_start(args, format);
 	int (*f)(va_list);
 
 	if (format == NULL)
 		return (-1);
-
 	while (format[i])
 	{
 		if (format[i] != '%')

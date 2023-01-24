@@ -18,7 +18,7 @@ typedef struct func
 } func_s;
 
 int _printf(const char *format, ...);
-int (*handle_specifier(const char*))(va_list);
+int (*handle_specifier(const char *format))(va_list);
 int print_char(va_list);
 int print_str(va_list);
 int print_cent(va_list);

@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_char - prints a character to stdout
- * @c: character
+ * @args: variadic parameter
  *
  * Return: number of characters printed to stdout
  */
