@@ -1,28 +1,40 @@
 #include "main.h"
 
 /**
- * print_str - prints a variadic string each per time to stdout
- * @args: variadic parameter
+ * str_len - get length of a string
+ * @str: string
  *
- * Return: number of characters printed on Success
- * upon failure -1
+ * Return: length of the string
+ */
+
+unsigned int str_len(const char *str)
+{
+	unsigned int len = 0;
+
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
+
+/**
+ * print_str - prints a string
+ * @args: argument
+ *
+ * Return: number of characters printed to stdout
  */
 
 int print_str(va_list args)
 {
-	int i;
-	int count = 0;
-	char *str;
+	int length = 0;
+	unsigned int len;
+	char *string = va_arg(args, char *);
 
-	str = va_arg(args, char *);
-	if (str == NULL)
-		return (-1);
-
-	while (str[i])
+	if (string == NULL)
 	{
-		count = write(1, &str[i], 1);
-		i = i + 1;
+		length = write(1, "(null)", 6);
+		return (length);
 	}
-
-	return (count);
+	len = str_len(string);
+	length += write(1, string, len);
+	return (length);
 }

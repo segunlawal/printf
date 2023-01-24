@@ -20,6 +20,7 @@ typedef struct func
 int _printf(const char *format, ...);
 int (*handle_specifier(const char *format))(va_list);
 int print_char(va_list);
+unsigned int str_len(const char *str);
 int print_str(va_list);
 int print_cent(va_list);
 
